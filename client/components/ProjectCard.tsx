@@ -10,7 +10,15 @@ interface ProjectCardProps {
   index?: number;
 }
 
-export function ProjectCard({ title, emoji, description, tech, live, github, index = 0 }: ProjectCardProps) {
+export function ProjectCard({
+  title,
+  emoji,
+  description,
+  tech,
+  live,
+  github,
+  index = 0,
+}: ProjectCardProps) {
   return (
     <div
       className="group relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800/40 to-gray-900/60 border border-gray-700/40 backdrop-blur-xl hover:backdrop-blur-2xl transition-all duration-500 hover:border-primary/60 shadow-2xl hover:shadow-3xl hover:shadow-primary/30 transform hover:-translate-y-2 animate-slide-up"
@@ -29,7 +37,9 @@ export function ProjectCard({ title, emoji, description, tech, live, github, ind
         <div className="relative w-full h-48 rounded-xl bg-gradient-to-br from-gray-700/50 to-gray-800/50 mb-6 flex items-center justify-center border border-gray-600/30 overflow-hidden group/icon">
           {/* Animated background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-500"></div>
-          <div className="text-7xl group-hover/icon:scale-110 transition-transform duration-500">{emoji}</div>
+          <div className="text-7xl group-hover/icon:scale-110 transition-transform duration-500">
+            {emoji}
+          </div>
         </div>
 
         {/* Title */}
@@ -62,7 +72,11 @@ export function ProjectCard({ title, emoji, description, tech, live, github, ind
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-primary to-primary/80 text-white text-sm font-bold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 active:scale-95"
           >
-            <ExternalLink size={16} className="group-hover:rotate-45 transition-transform" /> Live
+            <ExternalLink
+              size={16}
+              className="group-hover:rotate-45 transition-transform"
+            />{" "}
+            Live
           </a>
           <a
             href={github}

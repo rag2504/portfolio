@@ -97,7 +97,8 @@
 
   /* Enhanced animations for better visual appeal */
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px) translateX(0px);
     }
     33% {
@@ -109,7 +110,8 @@
   }
 
   @keyframes blob {
-    0%, 100% {
+    0%,
+    100% {
       transform: translate(0, 0) scale(1);
     }
     33% {
@@ -142,16 +144,22 @@
   }
 
   @keyframes glow-pulse {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(147, 51, 234, 0.5), 0 0 40px rgba(147, 51, 234, 0.3);
+    0%,
+    100% {
+      box-shadow:
+        0 0 20px rgba(147, 51, 234, 0.5),
+        0 0 40px rgba(147, 51, 234, 0.3);
     }
     50% {
-      box-shadow: 0 0 30px rgba(147, 51, 234, 0.8), 0 0 60px rgba(147, 51, 234, 0.5);
+      box-shadow:
+        0 0 30px rgba(147, 51, 234, 0.8),
+        0 0 60px rgba(147, 51, 234, 0.5);
     }
   }
 
   @keyframes hover-lift {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px);
     }
     50% {

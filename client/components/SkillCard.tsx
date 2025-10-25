@@ -17,7 +17,9 @@ export function SkillCard({ name, icon, index = 0 }: SkillCardProps) {
       <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/0 to-accent/0 group-hover:from-primary/50 group-hover:to-accent/50 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-500 -z-10"></div>
 
       <div className="relative z-10">
-        <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-500 inline-block">{icon}</div>
+        <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-500 inline-block">
+          {icon}
+        </div>
         <p className="font-bold text-white text-sm group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:bg-clip-text transition-all duration-300">
           {name}
         </p>

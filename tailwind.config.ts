@@ -92,7 +92,7 @@ export default {
           "0%": { transform: "translateY(-20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
-        "glow": {
+        glow: {
           "0%, 100%": { boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" },
           "50%": { boxShadow: "0 0 30px rgba(147, 51, 234, 0.8)" },
         },
@@ -103,17 +103,18 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.6s ease-out",
         "slide-down": "slide-down 0.6s ease-out",
-        "glow": "glow 2s ease-in-out infinite",
-        "float": "float 6s ease-in-out infinite",
-        "blob": "blob 7s infinite",
+        glow: "glow 2s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
+        blob: "blob 7s infinite",
         "gradient-shift": "gradient-shift 3s ease infinite",
-        "shimmer": "shimmer 2s infinite",
+        shimmer: "shimmer 2s infinite",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "hover-lift": "hover-lift 2s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },

@@ -6,10 +6,19 @@ interface HeroSectionProps {
 
 export function HeroSection({ onScrollToSection }: HeroSectionProps) {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden"
+    >
       {/* Floating gradient elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDuration: "6s" }}></div>
-      <div className="absolute bottom-32 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDuration: "8s", animationDelay: "1s" }}></div>
+      <div
+        className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"
+        style={{ animationDuration: "6s" }}
+      ></div>
+      <div
+        className="absolute bottom-32 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float"
+        style={{ animationDuration: "8s", animationDelay: "1s" }}
+      ></div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         {/* Main Heading */}
@@ -21,18 +30,37 @@ export function HeroSection({ onScrollToSection }: HeroSectionProps) {
           </div>
 
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-fade-in leading-tight">
-            Hi, I'm Rag Raichura <span className="inline-block animate-bounce" style={{ animationDuration: "2s" }}>👋</span>
+            Hi, I'm Rag Raichura{" "}
+            <span
+              className="inline-block animate-bounce"
+              style={{ animationDuration: "2s" }}
+            >
+              👋
+            </span>
           </h1>
         </div>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in font-light" style={{ animationDelay: "0.2s" }}>
-          A <span className="font-semibold text-primary">Full Stack Developer</span> crafting elegant digital solutions with{" "}
-          <span className="font-semibold text-secondary">React, Node.js, Express & MongoDB</span>. Building the future, one line of code at a time.
+        <p
+          className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in font-light"
+          style={{ animationDelay: "0.2s" }}
+        >
+          A{" "}
+          <span className="font-semibold text-primary">
+            Full Stack Developer
+          </span>{" "}
+          crafting elegant digital solutions with{" "}
+          <span className="font-semibold text-secondary">
+            React, Node.js, Express & MongoDB
+          </span>
+          . Building the future, one line of code at a time.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+        <div
+          className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-slide-up"
+          style={{ animationDelay: "0.4s" }}
+        >
           <button
             onClick={() => onScrollToSection("projects")}
             className="group relative px-8 py-4 rounded-xl font-bold text-lg text-white overflow-hidden transition-all duration-300 hover:scale-110 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/50"
@@ -41,8 +69,18 @@ export function HeroSection({ onScrollToSection }: HeroSectionProps) {
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 blur-xl group-hover:opacity-50 transition-opacity"></div>
             <span className="relative inline-flex items-center gap-2">
               View My Projects
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </span>
           </button>
@@ -57,8 +95,14 @@ export function HeroSection({ onScrollToSection }: HeroSectionProps) {
         </div>
 
         {/* Scroll indicator */}
-        <div className="pt-12 animate-bounce" style={{ animationDuration: "3s" }}>
-          <button onClick={() => onScrollToSection("about")} className="mx-auto block p-2 rounded-full border border-primary/30 hover:border-primary transition-colors">
+        <div
+          className="pt-12 animate-bounce"
+          style={{ animationDuration: "3s" }}
+        >
+          <button
+            onClick={() => onScrollToSection("about")}
+            className="mx-auto block p-2 rounded-full border border-primary/30 hover:border-primary transition-colors"
+          >
             <ChevronDown size={32} className="text-primary" />
           </button>
         </div>
@@ -67,7 +111,10 @@ export function HeroSection({ onScrollToSection }: HeroSectionProps) {
       {/* Floating code elements */}
       <div className="absolute top-32 right-10 opacity-5 text-gray-400 text-xs font-mono max-w-xs hidden lg:block">
         <div className="border border-gray-500 rounded p-4 bg-gray-900/50">
-          <div>const <span className="text-primary">buildAwesome</span> = () =&gt; {'{}'}</div>
+          <div>
+            const <span className="text-primary">buildAwesome</span> = () =&gt;{" "}
+            {"{}"}
+          </div>
         </div>
       </div>
     </section>
