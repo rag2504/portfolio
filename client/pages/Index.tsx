@@ -26,6 +26,55 @@ export default function Index() {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "15f72068-12b7-4874-871f-9ae361f401be",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New message from ${formData.name}`
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Success!",
+          description: "Your message has been sent successfully. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const projects = [
     {
       id: 1,
