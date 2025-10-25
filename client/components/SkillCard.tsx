@@ -7,22 +7,33 @@ interface SkillCardProps {
 export function SkillCard({ name, icon, index = 0 }: SkillCardProps) {
   return (
     <div
-      className="group relative rounded-xl bg-gradient-to-br from-gray-800/40 to-gray-900/60 border border-gray-700/40 backdrop-blur-xl p-5 text-center hover:border-primary/60 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/40 transform hover:-translate-y-1 cursor-default hover:scale-110 animate-fade-in"
+      className="group relative rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-xl p-6 text-center hover:border-purple-500/80 transition-all duration-500 transform hover:-translate-y-2 hover:scale-110 cursor-default animate-fade-in overflow-hidden"
       style={{ animationDelay: `${index * 0.03}s` }}
     >
-      {/* Gradient background on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500"></div>
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-pink-600/10 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500"></div>
 
       {/* Animated border glow */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/0 to-accent/0 group-hover:from-primary/50 group-hover:to-accent/50 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-500 -z-10"></div>
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/0 via-purple-600/80 to-pink-600/0 rounded-xl blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-500 -z-10"></div>
 
-      <div className="relative z-10">
-        <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-500 inline-block">
-          {icon}
+      {/* Shine effect */}
+      <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/20 to-transparent -rotate-45 group-hover:inset-0 transition-all duration-700 opacity-0 group-hover:opacity-20"></div>
+
+      <div className="relative z-10 space-y-3">
+        {/* Icon */}
+        <div className="inline-flex justify-center">
+          <div className="text-5xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 drop-shadow-lg">
+            {icon}
+          </div>
         </div>
-        <p className="font-bold text-white text-sm group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:bg-clip-text transition-all duration-300">
+
+        {/* Name */}
+        <p className="font-bold text-white text-sm group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
           {name}
         </p>
+
+        {/* Accent line */}
+        <div className="w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto group-hover:w-full transition-all duration-500 rounded-full"></div>
       </div>
     </div>
   );
