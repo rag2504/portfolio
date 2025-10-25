@@ -180,7 +180,8 @@
   }
 
   @keyframes gradient-text {
-    0%, 100% {
+    0%,
+    100% {
       background-position: 0% 50%;
     }
     50% {
@@ -189,11 +190,16 @@
   }
 
   @keyframes neon-glow {
-    0%, 100% {
-      text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(147, 51, 234, 0.6);
+    0%,
+    100% {
+      text-shadow:
+        0 0 10px rgba(168, 85, 247, 0.8),
+        0 0 20px rgba(147, 51, 234, 0.6);
     }
     50% {
-      text-shadow: 0 0 20px rgba(168, 85, 247, 1), 0 0 30px rgba(147, 51, 234, 0.8);
+      text-shadow:
+        0 0 20px rgba(168, 85, 247, 1),
+        0 0 30px rgba(147, 51, 234, 0.8);
     }
   }
 
