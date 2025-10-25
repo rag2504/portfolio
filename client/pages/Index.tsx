@@ -4,9 +4,13 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SkillCard } from "@/components/SkillCard";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Index() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
