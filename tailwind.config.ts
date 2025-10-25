@@ -104,6 +104,12 @@ export default {
         "slide-up": "slide-up 0.6s ease-out",
         "slide-down": "slide-down 0.6s ease-out",
         "glow": "glow 2s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "blob": "blob 7s infinite",
+        "gradient-shift": "gradient-shift 3s ease infinite",
+        "shimmer": "shimmer 2s infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "hover-lift": "hover-lift 2s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
