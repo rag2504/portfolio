@@ -327,11 +327,15 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <form className="space-y-6 animate-slide-up">
+            <form onSubmit={handleFormSubmit} className="space-y-6 animate-slide-up">
               <div className="group">
                 <label className="block text-sm font-bold text-gray-300 mb-3 group-focus-within:text-pink-400 transition-colors">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
                   className="w-full px-5 py-3.5 rounded-lg bg-gray-800/50 border border-gray-700/50 text-white placeholder-gray-500 focus:border-pink-500 focus:outline-none transition-all duration-300 focus:shadow-lg focus:shadow-pink-500/30 backdrop-blur-xl group-focus-within:border-pink-500/60"
                   placeholder="Your name"
                 />
@@ -341,6 +345,10 @@ export default function Index() {
                 <label className="block text-sm font-bold text-gray-300 mb-3 group-focus-within:text-pink-400 transition-colors">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
                   className="w-full px-5 py-3.5 rounded-lg bg-gray-800/50 border border-gray-700/50 text-white placeholder-gray-500 focus:border-pink-500 focus:outline-none transition-all duration-300 focus:shadow-lg focus:shadow-pink-500/30 backdrop-blur-xl group-focus-within:border-pink-500/60"
                   placeholder="your@email.com"
                 />
@@ -349,6 +357,10 @@ export default function Index() {
               <div className="group">
                 <label className="block text-sm font-bold text-gray-300 mb-3 group-focus-within:text-pink-400 transition-colors">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  required
                   rows={5}
                   className="w-full px-5 py-3.5 rounded-lg bg-gray-800/50 border border-gray-700/50 text-white placeholder-gray-500 focus:border-pink-500 focus:outline-none transition-all duration-300 focus:shadow-lg focus:shadow-pink-500/30 backdrop-blur-xl resize-none group-focus-within:border-pink-500/60"
                   placeholder="Your message here..."
@@ -357,13 +369,14 @@ export default function Index() {
 
               <button
                 type="submit"
-                className="w-full group relative px-6 py-4 rounded-lg font-bold text-lg text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl active:scale-95"
+                disabled={isSubmitting}
+                className="w-full group relative px-6 py-4 rounded-lg font-bold text-lg text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-blue-500 opacity-50 blur-xl group-hover:opacity-100 -z-10 transition-opacity"></div>
                 <span className="relative flex items-center justify-center gap-2">
-                  Send Message <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? "Sending..." : "Send Message"} {!isSubmitting && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
                 </span>
               </button>
             </form>
