@@ -167,6 +167,36 @@
     }
   }
 
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+    }
+  }
+
+  @keyframes gradient-text {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes neon-glow {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(147, 51, 234, 0.6);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(168, 85, 247, 1), 0 0 30px rgba(147, 51, 234, 0.8);
+    }
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -176,7 +206,7 @@
   }
 
   .animate-gradient-shift {
-    animation: gradient-shift 3s ease infinite;
+    animation: gradient-shift 4s ease infinite;
     background-size: 200% 200%;
   }
 
@@ -185,10 +215,22 @@
   }
 
   .animate-glow-pulse {
-    animation: glow-pulse 2s ease-in-out infinite;
+    animation: glow-pulse 3s ease-in-out infinite;
   }
 
   .animate-hover-lift {
     animation: hover-lift 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 2s infinite;
+  }
+
+  .animate-gradient-text {
+    animation: gradient-text 3s ease infinite;
+  }
+
+  .animate-neon-glow {
+    animation: neon-glow 2s ease-in-out infinite;
   }
 }
