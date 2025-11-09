@@ -306,9 +306,14 @@ export default function Index() {
               </p>
 
               <div className="pt-6 flex gap-4">
-                <button className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold hover:shadow-xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 active:scale-95">
+                <a
+                  href="/Rag-Raichura-Resume.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold hover:shadow-xl hover:shadow-blue-500/50 transition-all transform hover:scale-105 active:scale-95"
+                  aria-label="Download my resume PDF"
+                >
                   Download Resume <ArrowUpRight size={18} />
-                </button>
+                </a>
               </div>
             </div>
           </div>
