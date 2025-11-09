@@ -96,7 +96,7 @@ export default function Index() {
       emoji: "🏏",
       description:
         "A complete web platform where users can book box cricket grounds just like BookMyShow. Features include user, admin, and owner panels, real-time booking status, payment gateway integration, and automated success messages.",
-      tech: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+      tech: ["React", "Node.js", "MongoDB", "Express", "Cashfree"],
       live: "https://boxcricket-booking.vercel.app/",
       github: "https://github.com/rag2504/boxcricket-booking",
     },
@@ -122,8 +122,40 @@ export default function Index() {
     },
   ];
 
+  // Small Projects (Mini)
+  const smallProjects = [
+    {
+      title: "Eclara Elegante",
+      emoji: "🛒",
+      description:
+        "Client-facing showcase e‑commerce built on Site123. Fully functional with browsing, cart, and checkout for quick go‑live.",
+      tech: ["Site123", "E‑Commerce", "Checkout"],
+      live: "https://66e8f5366e70b.site123.me",
+      github: "",
+    },
+    {
+      title: "TerraTattva",
+      emoji: "🏺",
+      description:
+        "Student demo to help local potters sell pottery online. Responsive storefront with product catalog and simple ordering.",
+      tech: ["React", "Vite", "Tailwind", "Netlify"],
+      live: "https://terratattva.netlify.app/",
+      github: "https://github.com/rag2504/TerraTattva-man",
+    },
+    {
+      title: "Realtime Chess",
+      emoji: "♟️",
+      description:
+        "Two-player online chess with realtime moves, rooms, and game sync using WebSockets. Built with vanilla HTML/CSS/JS on the client and Node.js, Express, Socket.io, and MongoDB on the backend.",
+      tech: ["HTML/CSS/JS", "Node.js", "Express", "Socket.io", "MongoDB"],
+      live: "https://chess-online-game4.netlify.app/",
+      github: "https://github.com/rag2504/chess-game",
+    },
+  ];
+
   const skills = [
     { name: "React", icon: "⚛️" },
+    { name: "Next.js", icon: "▲" },
     { name: "Node.js", icon: "🟢" },
     { name: "Express", icon: "🚂" },
     { name: "MongoDB", icon: "🍃" },
@@ -131,7 +163,6 @@ export default function Index() {
     { name: "TypeScript", icon: "📘" },
     { name: "Flutter", icon: "🦋" },
     { name: "Dart", icon: "🎯" },
-    { name: "HTML/CSS", icon: "🎨" },
     { name: "REST APIs", icon: "🔌" },
     { name: "Git/GitHub", icon: "🐙" },
     { name: "Tailwind CSS", icon: "🎪" },
@@ -260,7 +291,7 @@ export default function Index() {
               <p className="text-lg text-gray-200 leading-relaxed font-light">
                 Specialized in{" "}
                 <span className="font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  React, Node.js, Express, MongoDB, and Flutter
+                  React, Node.js, Next Js, Express, MongoDB, and Flutter
                 </span>
                 . I craft clean, scalable, and user-friendly solutions that
                 solve real-world problems.
@@ -323,28 +354,56 @@ export default function Index() {
               ✨ Small Projects
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["Mini Project 1", "Mini Project 2", "Mini Project 3"].map(
-                (title, index) => (
-                  <div
-                    key={index}
-                    className="group relative rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-xl p-8 flex flex-col items-center justify-center min-h-56 hover:border-pink-500/60 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-500/30 transform hover:-translate-y-3 animate-slide-up overflow-hidden"
-                    style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-                  >
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-600/10 to-purple-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute -inset-px bg-gradient-to-r from-pink-600/0 via-purple-600/50 to-pink-600/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg -z-10"></div>
+              {smallProjects.map((p, index) => (
+                <div
+                  key={p.title}
+                  className="group relative rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 backdrop-blur-xl p-6 flex flex-col min-h-56 hover:border-pink-500/60 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-500/30 transform hover:-translate-y-3 animate-slide-up overflow-hidden"
+                  style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                >
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-600/10 to-purple-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-px bg-gradient-to-r from-pink-600/0 via-purple-600/50 to-pink-600/0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg -z-10"></div>
 
-                    <div className="relative z-10 text-center">
-                      <p className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
-                        {title}
-                      </p>
-                      <p className="text-gray-500 font-semibold">
-                        Coming Soon...
-                      </p>
+                  <div className="relative z-10 space-y-3">
+                    <div className="text-4xl">{p.emoji}</div>
+                    <p className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300">
+                      {p.title}
+                    </p>
+                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                      {p.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {p.tech.map((t) => (
+                        <span key={t} className="px-2.5 py-1 rounded-full text-xs bg-gray-700/40 border border-gray-600/50 text-gray-300">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3 pt-2">
+                      {p.live && p.live !== "#" && (
+                        <a
+                          href={p.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center px-3 py-2 rounded-md bg-gradient-to-r from-pink-600 to-purple-600 text-white text-xs font-bold hover:shadow-lg hover:shadow-pink-500/40 transition-all"
+                        >
+                          Live
+                        </a>
+                      )}
+                      {p.github && p.github !== "#" && (
+                        <a
+                          href={p.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center px-3 py-2 rounded-md border border-gray-600 text-gray-300 text-xs font-bold hover:border-purple-500 hover:text-purple-300 transition-all"
+                        >
+                          Code
+                        </a>
+                      )}
                     </div>
                   </div>
-                ),
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -544,12 +603,12 @@ export default function Index() {
               <h4 className="font-bold text-white text-sm uppercase tracking-wider">
                 Quick Links
               </h4>
-              <div className="space-y-2">
+              <div className="flex flex-col gap-2">
                 {["About", "Projects", "Skills"].map((link) => (
                   <button
                     key={link}
                     onClick={() => scrollToSection(link.toLowerCase())}
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm font-medium"
+                    className="block text-left text-gray-400 hover:text-purple-400 transition-colors text-sm font-medium"
                   >
                     {link}
                   </button>
